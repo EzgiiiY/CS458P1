@@ -1,0 +1,23 @@
+.hybrid-login-form h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+.hybrid-login-form{
+    padding: 60px 68px 40px;
+    margin-bottom: 90px;
+    display: block;
+}
+.center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid ;
+    padding: 10px;
+    border-radius: 16px;
+    background-color:rgba(0, 0, 0, 0.5);
+    line-height: 25px;
+  }
+  .ant-input{
+    padding-bottom: 16px;
+  }
