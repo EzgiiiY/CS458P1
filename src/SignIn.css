@@ -8,16 +8,27 @@
     padding: 60px 68px 40px;
     margin-bottom: 90px;
     display: block;
+
 }
-.center {
+.ant-card {
+    background:rgba(0, 0, 0, 0);
+} 
+
+#basic_password{
+    background-color: rgb(51, 51, 51);
+}
+.ant-card-body {
+    
     margin: auto;
     width: 50%;
-    border: 3px solid ;
     padding: 10px;
     border-radius: 16px;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0,0,0,.75);
     line-height: 25px;
   }
+  
   .ant-input{
     padding-bottom: 16px;
+    background: #333;
+
   }

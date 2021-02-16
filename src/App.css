@@ -52,7 +52,7 @@
 }
 
 .App-header {
-  background-color: #f2f2f2;
+  background-color: #000000;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -63,7 +63,7 @@
 }
 
 .App-footer {
-  background-color: #f2f2f2;
+  background-color: #000000;
   min-height: 100px;
   flex-direction: column;
   color: white;
@@ -113,19 +113,15 @@
 .code-box-demo {
   text-align: center;
 }
-.ant-layout-header,
-.ant-layout-footer {
-  background: #000000;
+.ant-layout-header {
   color: #fff;
+  background: inherit;
 }
-[data-theme="dark"] .ant-layout-header {
-  background: #6aa0c7;
-}
-[data-theme="dark"] .ant-layout-footer {
-  background: #6aa0c7;
-}
+
 .ant-layout-footer {
   line-height: 1.5;
+  background: inherit;
+
 }
 .ant-layout-sider {
   background: #0000;
@@ -136,10 +132,10 @@
   background: #3499ec;
 }
 .ant-layout-content {
-  background: #000000;
   color: #fff;
   min-height: 100vh;
   line-height: 120px;
+  
 }
 [data-theme="dark"] .ant-layout-content {
   background: #107bcb;
@@ -171,6 +167,7 @@
   line-height: 90px;
   margin-left: 3%;
   vertical-align: middle;
+  
   background: rgba(255, 255, 255, 0.3);
 }
 .ant-row-rtl #components-layout-demo-top .logo {
@@ -191,4 +188,9 @@
   width: 100%;
   margin: 5vh;
   justify-self: center;
+}
+
+#root {
+  background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/8ef88e03-6f89-4c75-ae51-f8da7d252358/c6fcb503-60e1-41ac-a335-d180fb98d475/TR-en-20210208-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+
 }
