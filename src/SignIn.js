@@ -26,7 +26,7 @@ class SignIn extends Component {
         console.log('Failed:', errorInfo);
     };
     showMoreInfo=(e)=> {
-        this.setState({buttonClicked:true});
+        this.setState({buttonClicked:!this.state.buttonClicked});
     }
 
     render() {
@@ -72,7 +72,7 @@ class SignIn extends Component {
                         <Button type="link" style={{padding:"0"}} onClick={e=>this.showMoreInfo(e)}>Learn more.</Button>
                     </p>
                     <br></br>
-                    {this.state.buttonClicked? <p style={{fontSize:"13px",color:"#8c8c8c"}}>The information collected by Google reCAPTCHA is subject to the Google <Button href="https://policies.google.com/privacy" style={{padding:"0"}} type="link">Privacy Policy </Button>and <Button href="https://policies.google.com/terms" type="link" style={{padding:"0"}}>Terms of Service</Button>, and is used for providing, maintaining, and improving the reCAPTCHA service and for general security purposes (it is not used for personalized advertising by Google).</p>:<></>}
+                    <p hidden={!this.state.buttonClicked} style={{fontSize:"13px",color:"#8c8c8c"}}>The information collected by Google reCAPTCHA is subject to the Google <Button href="https://policies.google.com/privacy" style={{padding:"0"}} type="link">Privacy Policy </Button>and <Button href="https://policies.google.com/terms" type="link" style={{padding:"0"}}>Terms of Service</Button>, and is used for providing, maintaining, and improving the reCAPTCHA service and for general security purposes (it is not used for personalized advertising by Google).</p>
                 </div> 
 
             </Card>
