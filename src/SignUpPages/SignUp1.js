@@ -1,4 +1,3 @@
-//url(https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png) no-repeat 50% 50%
 import { Router, Route, Switch, Link, Redirect, withRouter } from 'react-router-dom'; // added
 import React, { Component } from 'react';
 import { Card } from 'antd';
