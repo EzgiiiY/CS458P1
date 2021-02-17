@@ -1,0 +1,25 @@
+.centered {
+    height: 100vh; /* Magic here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ant-layout-content .signUp{
+      background: white;
+      display:block
+  }
+  .img{
+    height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center 
+  }
+
+  .signUp #basic_password {
+    background-color: #fff;
+}
+  .ant-card.signUp .ant-card-body{
+    background: white;
+
+  }

@@ -5,6 +5,7 @@ import { Layout, Menu, Breadcrumb, Button } from 'antd';
 import history from './history'; // added
 import logo from './logo.png';
 import SignIn from './SignIn';
+import HeaderMain from './Header'
 import SignUp1 from './SignUpPages/SignUp1';
 import SignUp2 from './SignUpPages/SignUp2';
 import SignUpFinal from './SignUpPages/SignUpFinal';
@@ -17,8 +18,8 @@ class App extends Component {
   render() {
     return (
       <Router history={history}>
-      <Header> <a href="https://www.netflix.com/tr-en/"><img className='logo' alt="logo" src={logo} /></a>
-       </Header>
+      <HeaderMain/>
+      
 
           <Content >
             <Switch>
@@ -26,6 +27,11 @@ class App extends Component {
             <Route path='/signIn'>
                 <SignIn/> 
             </Route>
+            <Route path='/signup'>
+                <SignUp1/>
+            </Route>
+            
+
               <SignIn />
             
             </Switch>
