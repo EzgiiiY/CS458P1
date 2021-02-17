@@ -21,7 +21,7 @@ class App extends Component {
       <HeaderMain/>
       
 
-          <Content >
+          <Content>
             <Switch>
             
             <Route path='/signIn'>
@@ -30,15 +30,19 @@ class App extends Component {
             <Route path='/signup'>
                 <SignUp1/>
             </Route>
-            
+            <Route path='/signup2'>
+                <SignUp2/>
+            </Route>
+            <Route path='/signUpFinal'>
+                <SignUpFinal/>
+            </Route>
+
 
               <SignIn />
             
             </Switch>
           </Content>
-          <Footer className='App-footer' style={{ textAlign: 'center'}}>
-            
-          </Footer>
+          
           </Router>
 
     );

@@ -32,7 +32,7 @@ class SignUp1 extends Component {
     render() {
         var content;
         if(this.state.passwordScreen){
-            content=<>
+            content=<div style={{margin:"100px 0 20px"}}>
               <p style={{textAlign:"left"}}>STEP 1 OF 3
 Create a password to start your membership.
 Just a few more steps and you're done!
@@ -61,15 +61,14 @@ We hate paperwork, too.</p>
                         <Form.Item name="send" valuePropName="checked">
                             <Checkbox >Please do not email me Netflix special offers.</Checkbox>
                         </Form.Item>
-
-                        <Form.Item>
-                            <Button block type="primary" htmlType="submit" style={{ backgroundColor: "#e50914", color: "#fff", borderColor: "#e50914" }}>
-                                Continue
-                            </Button>
-                        </Form.Item>
                         
                     </Form>
-            </>
+                    <Link to="/signup2">
+                    <Button block type="primary" htmlType="submit" style={{ backgroundColor: "#e50914", color: "#fff", borderColor: "#e50914" }}>
+                                Continue
+                    </Button>
+                    </Link>
+            </div>
         }
         else{
             content=

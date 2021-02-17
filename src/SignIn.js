@@ -31,7 +31,7 @@ class SignIn extends Component {
 
     render() {
         return (
-            <Card bordered={false} style={{ "backgroundColor": "#00000000" }} >
+            <Card bordered={false} style={{ "backgroundColor": "#00000000",paddingBottom:"5%" }} >
                 <div className="hybrid-login-form" >
                     <h1>Sign In</h1>
                     <Form
