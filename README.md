@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 The selenium tests are avaliable in /src/selenium-tests folder.
 you can run the tests in /selenium-tests by running:
-### `node "test<testNo>.js"`
+### `node test<testNo>.js`
 
 ## Available Scripts
 
