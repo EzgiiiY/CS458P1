@@ -37,7 +37,7 @@ class SignUpFinal extends Component {
     
     render() {
         var content;
-        
+        var currentPlan = this.props.location.state.detail;
         if (this.state.cardScreen) {
             content = <div style={{ margin: "100px 0 20px" }}>
                 <p style={{textAlign:"left"}}>STEP 3 OF 3

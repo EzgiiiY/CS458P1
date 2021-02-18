@@ -23,10 +23,12 @@ class SignUp2 extends Component {
             planScreen: false,
             selectedPlan: ""
         };
-
+        this.onSelectPlan = this.onSelectPlan.bind(this);
     }
 
-
+    onSelectPlan(record, selected, selectedRows, nativeEvent){
+        this.setState({selectedPlan:record});
+    }
     onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     };
@@ -85,6 +87,7 @@ Downgrade or upgrade at any time.</p>
                     <Table
                         rowSelection={{
                             type: "radio",
+                            onSelect:this.onSelectPlan
                         }}  
                         dataSource={data}
                         pagination={false}
@@ -101,7 +104,10 @@ Downgrade or upgrade at any time.</p>
                     </Table>
                 </div>
                 <p>Full HD (1080p), Ultra HD (4K) and HDR availability subject to your internet service and device capabilities. Not all content available in HD, Full HD, Ultra HD or HDR. See Terms of Use for more details.</p>
-                <Link to="/signUpFinal">
+                <Link to={{
+                        pathname: '/signUpFinal',
+                        state: { detail: this.state.selectedPlan}
+                        }}>
                     <Button block type="primary" htmlType="submit" style={{ backgroundColor: "#e50914", color: "#fff", borderColor: "#e50914" }}>
                         Continue
                     </Button>
