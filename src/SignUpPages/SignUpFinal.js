@@ -1,7 +1,7 @@
 import { Router, Route, Switch, Link, Redirect, withRouter } from 'react-router-dom'; // added
 import React, { Component } from 'react';
 import { Card } from 'antd';
-import { Layout, Button, List, Table, Radio, Divider } from 'antd';
+import { Layout, Button, List, Table, Radio, Divider, Form, Input,Checkbox } from 'antd';
 
 import { CheckOutlined } from '@ant-design/icons';
 
@@ -21,7 +21,7 @@ class SignUpFinal extends Component {
         super(props);
         this.state = {
             cardScreen: true,
-            
+
         };
 
     }
@@ -30,29 +30,75 @@ class SignUpFinal extends Component {
     onFinishFailed = (errorInfo: any) => {
         console.log('Failed:', errorInfo);
     };
-    showMoreInfo = (e) => {
-        this.setState({ buttonClicked: true });
-    }
 
-    
+
+
     render() {
         var content;
         var currentPlan = this.props.location.state.detail;
         if (this.state.cardScreen) {
             content = <div style={{ margin: "100px 0 20px" }}>
-                <p style={{textAlign:"left"}}>STEP 3 OF 3
+                <p style={{ textAlign: "left" }}>STEP 3 OF 3
 Set up your credit or debit card.</p>
                 <br></br>
                 <div>
+                <Form
+                        name="basic"
+                        initialValues={{ remember: true }}
+                        onFinish={this.onFinish}
+                        onFinishFailed={this.onFinishFailed}
+                    >
+                        <Form.Item
+                            name="fName"
+                            rules={[{ required: true, message: 'First Name is required!' }]}
+                        >
+                            <Input style={{borderRadius:"4px" }} placeholder="First Name" />
+                        </Form.Item>
 
-                {//CARD FORM NEEDED
-                }
-                   
+                        <Form.Item
+                            name="lName"
+                            rules={[{ required: true, message: 'Last Name is required!' }]}
+                        >
+                            <Input style={{borderRadius:"4px" }} placeholder="Last Name" />
+                        </Form.Item>
+
+                        <Form.Item
+                            name="cardNo"
+                            rules={[{ required: true, message: 'Card Number is required!' }]}
+                        >
+                            <Input style={{borderRadius:"4px" }} placeholder="Card Number" />
+                        </Form.Item>
+
+                        <Form.Item
+                            name="expDate"
+                            rules={[{ required: true, message: 'Expiration Month is required!' }]}
+                        >
+                            <Input style={{borderRadius:"4px" }} placeholder="Expiration Date" />
+                        </Form.Item>
+
+                        <Form.Item
+                            name="secCode"
+                            rules={[{ required: true, message: 'Security Code (CVV) is required!' }]}
+                        >
+                            <Input style={{borderRadius:"4px" }} placeholder="Security Code (CVV)" />
+                        </Form.Item>
+
+                    </Form>
+                    <p>{currentPlan.price} TL/month <br></br> {currentPlan.name} Plan
+                <Link style={{ justifyContent: "flex-end" }} to="signUp2">
+                    <Button type="link" style={{ color: "#b3b3b3" }}lor>
+                                CHANGE
+                    </Button>
+                </Link>
+                    </p>
+
                 </div>
                 <p>By checking the checkbox below, you agree to our Terms of Use, Privacy Statement, and that you are over 18. Netflix will automatically continue your membership and charge the monthly membership fee (currently 17.99 TL) to your payment method until you cancel. You may cancel at any time to avoid future charges.</p>
-                <Link to="/DONE">
+                <Checkbox style={{ padding:"2%",color: "#b3b3b3" }}>I Agree</Checkbox>
+
+                <Link to="/strt">
                     <Button block type="primary" htmlType="submit" style={{ backgroundColor: "#e50914", color: "#fff", borderColor: "#e50914" }}>
-                        Continue
+                        Start Membership
                     </Button>
                 </Link>
             </div>
