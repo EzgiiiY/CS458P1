@@ -1,6 +1,7 @@
 var webdriver = require('selenium-webdriver');
 var chrome = require('selenium-webdriver/chrome');
 const firefox = require('geckodriver');
+var path = require('chromedriver').path;
 
 const driverChrome = new webdriver.Builder()
     .withCapabilities({ browserName: 'chrome', chromeOptions: { w3c: false } })
