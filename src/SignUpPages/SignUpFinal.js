@@ -6,14 +6,9 @@ import { Layout, Button, List, Table, Radio, Divider, Form, Input,Checkbox } fro
 import { CheckOutlined } from '@ant-design/icons';
 
 import Checkmark from '../Checkmark.png';
-import Devices from '../Devices.png';
 
 import 'antd/dist/antd.css';
 import './SignUp1.css';
-import Column from 'antd/lib/table/Column';
-
-const { Header, Content, Footer } = Layout;
-
 
 
 class SignUpFinal extends Component {

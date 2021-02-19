@@ -17,6 +17,7 @@ class SignIn extends Component {
         super(props);
         this.state = { 
             buttonClicked:false,
+            fireRedirect:false
         };
         
     }
@@ -37,19 +38,21 @@ class SignIn extends Component {
                     <Form
                         name="basic"
                         initialValues={{ remember: true }}
-                        onFinish={this.onFinish}
                         onFinishFailed={this.onFinishFailed}
+                        onFinish={(e)=> { 
+                            this.setState({ fireRedirect: true })  }}
                     >
                         <Form.Item
-                            name="email"
-                            rules={[{ required: true, message: 'Please enter a valid email or phone number.' }]}
+                            name="name"
+                            rules={[{ id:"req1",required: true, message: 'Please enter a valid email or phone number.' }]}
                         >
                             <Input style={{ "backgroundColor": "#333",borderRadius:"4px" ,borderColor:"#333", color:"#8c8c8c"}} placeholder="Email or Phone Number" />
                         </Form.Item>
 
                         <Form.Item
                             name="password"
-                            rules={[{ required: true, message: 'Your password must contain between 4 and 60 characters.' }]}
+                            rules={[{ required: true, message: 'Your password must contain between 4 and 60 characters.' },
+                                    {min:true,message: 'Your password must contain between 4 and 60 characters.' }]}
                         >
                             <Input.Password iconRender={(visible) => (visible ? <h3>HIDE</h3> : <h3>SHOW</h3>)} style={{ "backgroundColor": "#333", borderColor:"#333",borderRadius:"4px"}} placeholder="Password" />
                         </Form.Item>
@@ -57,11 +60,9 @@ class SignIn extends Component {
 
 
                         <Form.Item>
-                            <Link to="/signedIn">
-                            <Button block type="primary" htmlType="submit" id="signIn" style={{ backgroundColor: "#e50914", color: "#fff", borderColor: "#e50914" }}>
+                            <Button  block type="primary" htmlType="submit" id="signIn" style={{ backgroundColor: "#e50914", color: "#fff", borderColor: "#e50914" }}>
                                 Sign In
-                        </Button>
-                        </Link>
+                            </Button>
                         </Form.Item>
                         <Form.Item id="rememberMe" name="remember" valuePropName="checked">
                             <Checkbox style={{ color: "#b3b3b3" }}>Remember me</Checkbox>
@@ -76,7 +77,9 @@ class SignIn extends Component {
                     <br></br>
                     <p hidden={!this.state.buttonClicked} id="extraInfo" style={{fontSize:"13px",color:"#8c8c8c"}}>The information collected by Google reCAPTCHA is subject to the Google <Button href="https://policies.google.com/privacy" style={{padding:"0"}} type="link">Privacy Policy </Button>and <Button href="https://policies.google.com/terms" type="link" style={{padding:"0"}}>Terms of Service</Button>, and is used for providing, maintaining, and improving the reCAPTCHA service and for general security purposes (it is not used for personalized advertising by Google).</p>
                 </div> 
-
+                {this.state.fireRedirect && (
+          <Redirect to={'/thank-you'}/>
+        )}                    
             </Card>
         );
     }
